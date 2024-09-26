@@ -9,10 +9,12 @@ import postRotues from "./routes/post.routes.js";
 import messageRoutes from "./routes/msg.routes.js";
 import { v2 as cloudinary } from "cloudinary";
 import { app, server } from "./socket/socket.js";
+import job from "./cron/cron.js";
 
 dotenv.config();
 // const app = express();
 connectToMongoDB();
+job.start();
 
 const __dirname = path.resolve();
 
